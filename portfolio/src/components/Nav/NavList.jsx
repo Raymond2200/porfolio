@@ -12,7 +12,7 @@ function NavList(props) {
         <Projects />
         <Skills />
       </div>
-  );
+  )
 }
 
 export default NavList;

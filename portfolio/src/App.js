@@ -1,17 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
-import NavList from "./components/NavList/NavList"
-import NameCard from "./components/NameCard/NaemCard"
-import Motivational from './components/Motivational/Moticational';
+import NavList from "./components/Nav/NavList"
+import NameCard from "./components/NameCard/NameCard"
+import Motivational from './components/Motivational/Motivational';
+import React from 'react';
+import Recommend from './components/Recommend/Recommend'
 
-function App() {
-  return (
-    <div className="App">
-      <NameCard />
-      <NavList />
-      <Motivational />
-    </div>
-  );
+class App extends React.Component {
+  state ={recommend: 0}
+
+  counting = (x) => {
+    if (x ==="yay") {
+      this.setState({
+        recommend: this.state.recommend + 1
+      })
+    }
+    else if (x === "nay") {
+      this.setState({
+        recommend: this.state.recommend - 1
+      })
+    }
+  }
+
+  render () {
+    return (
+      <div className="App">
+        <NameCard />
+        <NavList />
+        <Motivational />
+        <Recommend count={this.state.recommend} counting={this.counting}/>
+      </div>
+  )}
 }
 
 export default App;
