@@ -30,9 +30,9 @@ class ContactForm extends React.Component {
         <div>
           <form>
             <label>Email</label>
-            <input onChange ={this.handlechange} name= "email" value = {this.state.email}></input>
+            <input onChange ={this.handleChange} name= "email" value = {this.state.email}></input>
             <label>Message</label>
-            <input onChange ={this.handlechange} name= "message" value = {this.state.message}></input>
+            <input onChange ={this.handleChange} name= "message" value = {this.state.message}></input>
             <button>Submit</button>
           </form>
         </div>
