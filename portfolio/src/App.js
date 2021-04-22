@@ -1,33 +1,22 @@
 import './App.css';
-import NavList from "./components/Nav/NavList"
-import NameCard from "./components/NameCard/NameCard"
-import Motivational from './components/Motivational/Motivational';
-import React from 'react';
-import Recommend from './components/Recommend/Recommend'
+import React, {Component} from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import ContactPage from './pages/contact/ContactPage';
+import HomePage from './pages/HomePage/HomePage';
 
-class App extends React.Component {
-  state ={recommend: 0}
-
-  counting = (x) => {
-    if (x ==="yay") {
-      this.setState({
-        recommend: this.state.recommend + 1
-      })
-    }
-    else if (x === "nay") {
-      this.setState({
-        recommend: this.state.recommend - 1
-      })
-    }
-  }
+class App extends Component {
 
   render () {
     return (
       <div className="App">
-        <NameCard />
-        <NavList />
-        <Motivational />
-        <Recommend count={this.state.recommend} counting={this.counting}/>
+        <Switch>
+          <Route path='/contact' render={(props) => (
+              <ContactPage {...props}/>
+            )}/>
+          <Route path='/' render={(props) => (
+              <HomePage {...props}/>
+            )}/>
+        </Switch>
       </div>
   )}
 }

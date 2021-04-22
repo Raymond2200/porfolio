@@ -3,7 +3,7 @@ import React from 'react';
 function About(props) {
   return (
       <div>
-        About
+        <a href="/contact">Contact Me</a>
       </div>
   );
 }
